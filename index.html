@@ -25,7 +25,24 @@
     <a class="nav__inst" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
     <a class="nav__cta" href="#contact">Get in Touch</a>
   </nav>
+  <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="nav__menu-bars"><span></span><span></span></span>
+  </button>
 </header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-menu__links">
+    <a href="#philosophy" data-mm=""><span class="i">01</span>Studio</a>
+    <a href="#services" data-mm=""><span class="i">02</span>Services</a>
+    <a href="#process" data-mm=""><span class="i">03</span>Process</a>
+    <a href="#contact" data-mm=""><span class="i">04</span>Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="mobile-menu__cta" href="#contact" data-mm="">Get in Touch <span aria-hidden="true">↗</span></a>
+    <a class="mobile-menu__inst" href="https://instagram.com" target="_blank" rel="noopener">Find us on Instagram</a>
+  </div>
+</div>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top" data-screen-label="Hero">
