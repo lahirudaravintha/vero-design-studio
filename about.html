@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About VERO Design Studio - Our Founders, Colombo</title>
+<meta name="description" content="Meet the founders behind VERO Design Studio - a Colombo studio transforming commercial interiors into strategic brand experiences.">
+<link rel="preload" href="fonts/SimpleSerenitySerif.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/SimpleSerenityScript.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/img/about-hero.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="index.html#top">
+    <span class="mark">VERO</span>
+    <span class="sub">Design Studio</span>
+  </a>
+  <nav class="nav__links">
+    <a href="index.html#philosophy">Studio</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#process">Process</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a class="nav__inst" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <a class="nav__cta" href="index.html#contact">Get in Touch</a>
+  </nav>
+  <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="nav__menu-bars"><span></span><span></span></span>
+  </button>
+</header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-menu__links">
+    <a href="index.html#philosophy" data-mm=""><span class="i">01</span>Studio</a>
+    <a href="index.html#services" data-mm=""><span class="i">02</span>Services</a>
+    <a href="index.html#process" data-mm=""><span class="i">03</span>Process</a>
+    <a href="about.html" data-mm=""><span class="i">04</span>About</a>
+    <a href="index.html#contact" data-mm=""><span class="i">05</span>Contact</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="mobile-menu__cta" href="index.html#contact" data-mm="">Get in Touch <span aria-hidden="true">↗</span></a>
+    <a class="mobile-menu__inst" href="https://instagram.com" target="_blank" rel="noopener">Find us on Instagram</a>
+  </div>
+</div>
+
+<!-- ===================== ABOUT HERO ===================== -->
+<section class="about-hero" data-screen-label="About Hero">
+  <div class="about-hero__media">
+    <img fetchpriority="high" src="assets/img/about-hero.webp" alt="VERO designed commercial office interior" data-parallax="0.1">
+  </div>
+  <div class="about-hero__overlay"></div>
+  <div class="about-hero__inner">
+    <div class="about-hero__eyebrow" data-reveal="">
+      <span class="line"></span>
+      <span>About the Studio</span>
+    </div>
+    <h1 class="about-hero__title" data-reveal="" style="--d:.08s">A studio built on craft, control and a single <span class="accent">coherent idea.</span></h1>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="section about-intro" data-screen-label="About Intro">
+  <div class="about-intro__grid">
+    <div class="section-head about-intro__label" data-reveal="">
+      <span class="num">01</span>
+      <span class="label">Who We Are</span>
+    </div>
+    <div class="about-intro__body">
+      <p data-reveal="">VERO Design Studio is a Colombo practice for businesses that take their environments seriously. We treat every fit-out as an extension of the brand - considered in plan, precise in detail, warm in material.</p>
+      <p data-reveal="" style="--d:.1s">From the first measured drawing to the final installed joinery, the work stays in-house. That control is what lets us hold a space to a single idea - and deliver it turnkey, exactly as drawn. Behind that discipline are two people who lead every project personally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDERS ===================== -->
+<section class="section founders" id="founders" data-screen-label="Founders">
+  <div class="section-head" data-reveal="">
+    <span class="num">02</span>
+    <span class="label">Our Founders</span>
+  </div>
+  <div class="founders__grid">
+    <article class="founder" data-reveal="">
+      <div class="founder__photo">
+        <img loading="lazy" decoding="async" src="assets/img/founder-sachith.webp" alt="Sachith Senevirathne, Chief Executive Officer">
+      </div>
+      <h2 class="founder__name">Sachith Senevirathne</h2>
+      <div class="founder__role">Chief Executive Officer</div>
+      <div class="founder__rule"></div>
+      <p class="founder__bio">Sachith is a CAPM-certified Site Engineer and Project Manager with a comprehensive background in construction management, structural oversight, and project operations. With over 10 years of experience, he pairs technical engineering acumen with rigorous strategic planning - keeping every project precise, accountable and on programme.</p>
+    </article>
+    <article class="founder" data-reveal="" style="--d:.1s">
+      <div class="founder__photo">
+        <img loading="lazy" decoding="async" src="assets/img/founder-maheshi.webp" alt="Maheshi Seneviratne, Chief Design Officer">
+      </div>
+      <h2 class="founder__name">Maheshi Seneviratne</h2>
+      <div class="founder__role">Chief Design Officer</div>
+      <div class="founder__rule"></div>
+      <p class="founder__bio">With a strong history in interior design at organisations such as Roux Brothers, Maheshi brings over a decade of experience in crafting ideal living and working spaces. She leads the end-to-end design process, guiding both residential and corporate clients through a seamless journey where ideas are turned into reality through precise execution.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="about-cta" data-screen-label="About CTA">
+  <div class="section">
+    <h2 class="about-cta__title" data-reveal="">Let's build something <span class="accent">considered.</span></h2>
+    <a class="about-cta__btn" href="index.html#contact" data-reveal="" style="--d:.1s">Start a project <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="mark">VERO</div>
+        <div class="sub">Design Studio - Colombo</div>
+      </div>
+      <div class="footer__cta">
+        <a href="mailto:hello@design92.lk">Start a project ↗</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Vero Design Studio. All rights reserved.</span>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+
+</body></html>

@@ -4,3 +4,4 @@ assets/img/*.png
 # Local dev tooling and design source files (not part of the deployed site)
 .claude/
 VERO Design Studio (standalone) - mobile optmized.html
+VERO About (standalone) about us.html
