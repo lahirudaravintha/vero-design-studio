@@ -350,7 +350,7 @@ body.menu-open .mobile-menu__foot {
 .hero__title {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(1.65rem, 4.2vw, 4.2rem);
+  font-size: clamp(3.3rem, 8.4vw, 8.4rem);
   line-height: 1.06;
   letter-spacing: 0.005em;
   max-width: 16ch;
@@ -890,7 +890,7 @@ body.menu-open .mobile-menu__foot {
   .hero__media img { object-position: center 50%; }
   .hero__inner { padding-bottom: clamp(2.4rem, 9vh, 4rem); }
   .hero__title {
-    font-size: clamp(2rem, 9vw, 3rem) !important;
+    font-size: clamp(3rem, 15vw, 5rem) !important;
     line-height: 1.08 !important;
     max-width: 14ch;
   }
