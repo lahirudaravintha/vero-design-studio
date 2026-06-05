@@ -8,3 +8,6 @@ assets/img/*.png
 .claude/
 VERO Design Studio (standalone) - mobile optmized.html
 VERO About (standalone) about us.html
+
+# Exported brand/logo assets (local, not part of the deployed site)
+logo/
