@@ -1008,17 +1008,25 @@ body.menu-open .mobile-menu__foot {
 
 .about-intro { background: var(--canvas); }
 .about-intro__grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
-.about-intro__label { color: var(--ink-soft); }
+.about-intro__label {
+  color: var(--ink-soft);
+  justify-content: center;
+  margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+}
 .about-intro__body p {
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
   line-height: 1.6;
   color: var(--ink-soft);
-  max-width: 56ch;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 .about-intro__body p + p { margin-top: 1.3rem; }
 
