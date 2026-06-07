@@ -746,7 +746,6 @@ body.menu-open .mobile-menu__foot {
   min-height: 340px;
   border: 0;
   display: block;
-  filter: grayscale(1) contrast(1.04) brightness(1.03);
 }
 .contact__left .eyebrow { color: rgba(242,237,228,0.75); }
 .contact__title {
