@@ -1016,6 +1016,27 @@ body.menu-open .mobile-menu__foot {
   margin-right: auto;
 }
 .about-intro__body p + p { margin-top: 1.3rem; }
+.about-intro__people {
+  margin-top: clamp(1.8rem, 4vh, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.about-intro__people .person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.about-intro__people .person__name {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.about-intro__people .person__cred {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+}
 
 .founders { background: var(--canvas); }
 .founders .section { padding-top: clamp(2rem, 4vh, 3rem); }
