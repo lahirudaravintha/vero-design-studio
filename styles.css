@@ -993,7 +993,7 @@ body.menu-open .mobile-menu__foot {
 }
 .about-hero__title .accent { color: var(--brass-soft); }
 
-.about-intro { background: var(--canvas); }
+.about-intro { background: var(--canvas); padding-bottom: clamp(2.5rem, 6.5vh, 5.5rem); }
 .about-intro__grid {
   display: flex;
   flex-direction: column;
@@ -1017,8 +1017,7 @@ body.menu-open .mobile-menu__foot {
 }
 .about-intro__body p + p { margin-top: 1.3rem; }
 
-.founders { background: var(--canvas); }
-.founders .section { padding-top: clamp(2rem, 4vh, 3rem); }
+.founders { background: var(--canvas); padding-top: clamp(2.5rem, 6.5vh, 5.5rem); }
 .founders__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
