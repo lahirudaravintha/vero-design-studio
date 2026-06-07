@@ -10,7 +10,7 @@
 <link rel="preload" href="fonts/SimpleSerenitySerif.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="fonts/SimpleSerenityScript.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/img/about-hero.webp" as="image" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -18,9 +18,8 @@
 
 <!-- ===================== NAV ===================== -->
 <header class="nav" id="nav">
-  <a class="nav__brand" href="index.html#top">
-    <span class="mark">VERO</span>
-    <span class="sub">Design Studio</span>
+  <a class="nav__brand" href="index.html#top" aria-label="VERO Design Studio">
+    <span class="brand-logo"></span>
   </a>
   <nav class="nav__links">
     <a href="index.html#philosophy">Studio</a>
@@ -120,8 +119,7 @@
   <div class="footer__inner">
     <div class="footer__top">
       <div class="footer__brand">
-        <div class="mark">VERO</div>
-        <div class="sub">Design Studio</div>
+        <span class="brand-logo" role="img" aria-label="VERO Design Studio"></span>
       </div>
       <div class="footer__cta">
         <a href="mailto:hello@design92.lk">Start a project ↗</a>
