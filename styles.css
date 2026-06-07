@@ -729,7 +729,7 @@ body.menu-open .mobile-menu__foot {
 .contact .section { padding-top: clamp(5rem, 12vh, 9rem); padding-bottom: clamp(5rem, 12vh, 9rem); }
 .contact__grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(2.5rem, 6vw, 6rem);
 }
 .contact__left .eyebrow { color: rgba(242,237,228,0.75); }
@@ -1156,12 +1156,13 @@ body.menu-open .mobile-menu__foot {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #25d366;
-  color: #fff;
+  background: #fff;
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .wa-bubble:hover { transform: scale(1.08); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32); }
