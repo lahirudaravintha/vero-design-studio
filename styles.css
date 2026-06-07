@@ -565,8 +565,43 @@ body.menu-open .mobile-menu__foot {
 .services .section-head .label { color: rgba(239,233,220,0.6); }
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(1.4rem, 2.4vw, 2.4rem);
+}
+/* text-only services listed below the image grid */
+.services__more {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.6rem, 4vw, 3.5rem);
+  margin-top: clamp(1.8rem, 4vw, 3rem);
+  padding-top: clamp(1.8rem, 4vw, 3rem);
+  border-top: 1px solid var(--line-light);
+}
+.svc-text { display: flex; gap: 1rem; }
+.svc-text__num {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  color: var(--brass-soft);
+  padding-top: 0.45em;
+  font-weight: 600;
+}
+.svc-text__title {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+.svc-text__desc {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(239, 233, 220, 0.68);
+  max-width: 42ch;
+}
+@media (max-width: 720px) {
+  .services__more { grid-template-columns: 1fr; gap: 1.6rem; }
 }
 .svc {
   display: flex;
