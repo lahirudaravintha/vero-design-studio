@@ -115,7 +115,7 @@ img { display: block; max-width: 100%; }
           mask: url("assets/vero-logo.svg") center / contain no-repeat;
 }
 .nav__brand .brand-logo {
-  height: clamp(50px, 5.3vw, 65px);
+  height: clamp(55px, 5.8vw, 71.5px);
   aspect-ratio: 1474 / 848;
 }
 .footer__brand .brand-logo {
