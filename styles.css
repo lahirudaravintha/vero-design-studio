@@ -86,7 +86,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(1.1rem, 2vw, 1.8rem) var(--pad-x);
+  padding: clamp(0.55rem, 1vw, 0.9rem) var(--pad-x);
   color: #fff;
   transition: background 0.45s var(--ease), color 0.45s var(--ease), padding 0.45s var(--ease), backdrop-filter 0.45s var(--ease), box-shadow 0.45s var(--ease);
 }
@@ -95,8 +95,8 @@ img { display: block; max-width: 100%; }
   -webkit-backdrop-filter: blur(16px) saturate(120%);
   backdrop-filter: blur(16px) saturate(120%);
   color: var(--ink);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--line);
   box-shadow: 0 8px 30px rgba(12, 12, 11, 0.06);
 }
