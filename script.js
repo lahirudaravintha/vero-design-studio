@@ -6,6 +6,11 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Clean the address bar: /index.html -> / ---------- */
+  if (window.history && history.replaceState && /\/index\.html$/.test(location.pathname)) {
+    history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
+  }
+
   /* ---------- Nav scroll state ---------- */
   var nav = document.getElementById('nav');
   function onScrollNav() {
@@ -98,6 +103,20 @@
       window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
     });
   });
+
+  /* ---------- Logo: on home, scroll to top + keep URL clean ---------- */
+  var brand = document.querySelector('.nav__brand');
+  if (brand) {
+    brand.addEventListener('click', function (e) {
+      var onHome = location.pathname === '/' || /\/index\.html$/.test(location.pathname);
+      if (!onHome) return; // on other pages, let the link navigate home
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') || '/');
+      }
+    });
+  }
 
   /* ---------- Contact form (front-end only) ---------- */
   var form = document.getElementById('contactForm');
