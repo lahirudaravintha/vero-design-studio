@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Pantry Cost Estimator | VERO Design Studio</title>
+<meta name="description" content="Build your pantry and get an instant cost estimate from VERO Design Studio — cupboards, countertops, islands and more.">
+<!--====================================Analytics tags============================================================= -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZH3P79ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZH3P79ZSG1');
+</script>
+<!--MS Clarity-->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x55ze39j1m");
+</script>
+<!--================================================Analytics tags end==================================================-->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1733209287865139');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F2EDE6; --card:#FBF8F2; --ink:#1D1D1D;
+    --muted:#9A9082; --muted2:#5B554C; --faint:#B0A794;
+    --teal:#2B6A60; --teal-deep:#245b52;
+    --line:rgba(29,29,29,0.08); --line2:rgba(29,29,29,0.14);
+    --serif:'Playfair Display',Georgia,serif; --sans:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.5}
+  a{-webkit-tap-highlight-color:transparent}
+
+  /* ---------- header ---------- */
+  .vero-brand{text-align:center;padding:40px 20px 22px}
+  .vero-brand-mark{font-family:var(--serif);font-size:27px;font-weight:600;letter-spacing:.5px;color:var(--ink)}
+  .vero-brand-mark span{color:var(--teal);font-weight:500}
+  .vero-eyebrow{font-size:11px;letter-spacing:3px;color:var(--muted);margin-top:16px;text-transform:uppercase;font-weight:600}
+  .vero-brand-intro{font-size:14.5px;color:var(--muted2);margin-top:12px;line-height:1.55}
+  .vero-brand-rule{width:44px;height:1px;background:rgba(29,29,29,.18);margin:22px auto 0}
+
+  /* ---------- split layout ---------- */
+  .vero-split{display:flex;align-items:flex-start}
+  .vero-sketch{position:sticky;top:0;height:100vh;width:46%;padding:22px 22px 104px;border-right:1px solid var(--line)}
+  .sketch-card{background:var(--card);border:1px solid rgba(29,29,29,.06);border-radius:18px;height:100%;padding:20px;
+    box-shadow:0 1px 2px rgba(29,29,29,.03),0 14px 40px rgba(29,29,29,.05);display:flex;flex-direction:column}
+  .vero-ctrl{width:54%}
+  .vero-ctrl-inner{max-width:520px;margin:0 auto;padding:22px 20px 132px}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card);border:1px solid rgba(29,29,29,.06);border-radius:16px;padding:22px;margin-bottom:16px;
+    box-shadow:0 1px 2px rgba(29,29,29,.03),0 12px 34px rgba(29,29,29,.045)}
+  .card__head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card__title{font-family:var(--serif);font-size:20px;color:var(--ink);line-height:1.15}
+  .card__sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .sub-title{font-family:var(--serif);font-size:15px;color:var(--ink)}
+  .sub-note{font-size:11px;color:var(--muted);margin-top:2px}
+  .divider{height:1px;background:var(--line);margin:20px 0}
+  .row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .row-b{display:flex;justify-content:space-between;align-items:baseline}
+  .fieldlbl{font-size:13px;color:var(--muted2)}
+  .fieldval{font-weight:600;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .hint{font-size:11px;color:var(--faint);margin-top:8px}
+  .mini-price{font-size:13px;font-weight:600;color:var(--teal);font-variant-numeric:tabular-nums}
+  .st-lbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .st-val{font-size:17px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .mt20{margin-top:20px}
+  .mt18{margin-top:18px}
+
+  /* ---------- range ---------- */
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:rgba(29,29,29,.12);outline:none;cursor:pointer;margin-top:13px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:0 2px 7px rgba(43,106,96,.45);border:3px solid var(--card)}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--teal);cursor:pointer;border:3px solid var(--card);box-shadow:0 2px 7px rgba(43,106,96,.45)}
+
+  /* ---------- pills ---------- */
+  .pills{display:flex;gap:8px;margin-top:14px}
+  .pill{flex:1;text-align:center;padding:11px 6px;border-radius:10px;font-family:var(--sans);font-size:13px;cursor:pointer;user-select:none;
+    border:1px solid var(--line2);background:transparent;color:var(--muted2);font-weight:500;transition:all .15s}
+  .pill:hover{border-color:var(--teal)}
+  .pill.active{border-color:var(--teal);background:var(--teal);color:var(--bg);font-weight:600}
+
+  /* ---------- switch ---------- */
+  .switch{width:48px;height:28px;border-radius:999px;background:#D8D2C7;padding:3px;cursor:pointer;flex:none;transition:background .2s}
+  .switch.on{background:var(--teal)}
+  .switch .knob{width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+  .switch.on .knob{transform:translateX(20px)}
+
+  /* ---------- stepper ---------- */
+  .stepper{display:flex;align-items:center;gap:16px}
+  .stepper button{width:40px;height:40px;border-radius:11px;border:1px solid var(--line2);background:transparent;font-size:22px;color:var(--teal);cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+  .stepper button:disabled{opacity:.4;cursor:not-allowed}
+  .stepper .qty{font-size:19px;font-weight:700;color:var(--ink);min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+
+  .disclaimer{text-align:center;font-size:12px;color:var(--muted);line-height:1.6;margin:22px 10px 10px}
+  .foot{text-align:center;font-size:11px;color:var(--faint);margin-top:6px;letter-spacing:.5px}
+
+  /* ---------- sketch blocks ---------- */
+  #sketch{display:flex;flex-direction:column;height:100%;min-height:0}
+  .sk-block{display:flex;flex-direction:column;min-height:0}
+  .sk-block__head{display:flex;justify-content:space-between;align-items:baseline;flex:none;padding:2px 4px 0;gap:10px}
+  .sk-block__title{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink)}
+  .sk-block__sub{font-size:11px;color:var(--muted);white-space:nowrap}
+  .sk-block__art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:2px 0}
+  .sk-div{height:1px;background:rgba(29,29,29,.09);margin:6px 4px;flex:none}
+  .sk-empty{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--faint);font-size:13px;line-height:1.7}
+
+  /* ---------- fixed total bar ---------- */
+  .vero-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#FFFDF9;border-top:1px solid rgba(29,29,29,.1);box-shadow:0 -8px 28px rgba(29,29,29,.09);padding:13px 20px calc(13px + env(safe-area-inset-bottom))}
+  .vero-bar-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .vero-bar-lbl{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .vero-bar-total{font-size:29px;font-weight:700;color:var(--teal);margin-top:3px;font-variant-numeric:tabular-nums;letter-spacing:-.5px;line-height:1.05}
+  .vero-cta{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--teal);color:#F6F2EB;text-decoration:none;font-weight:600;font-size:15px;padding:15px 22px;border-radius:13px;box-shadow:0 6px 18px rgba(43,106,96,.28);flex:none;transition:transform .1s,background .15s}
+  .vero-cta:active{transform:scale(.985)}
+  .vero-cta:hover{background:var(--teal-deep)}
+  .vero-cta svg{flex:none}
+
+  [hidden]{display:none!important}
+
+  @media(max-width:880px){
+    .vero-split{flex-direction:column}
+    .vero-sketch{width:100%;height:40vh;padding:12px 14px;border-right:none;border-bottom:1px solid var(--line);background:var(--bg);z-index:20;
+      box-shadow:0 6px 18px rgba(29,29,29,.06)}
+    .vero-ctrl{width:100%}
+    .vero-ctrl-inner{padding:20px 16px 188px}
+    .vero-brand{padding:26px 20px 16px}
+    .vero-brand-mark{font-size:23px}
+    .vero-brand-intro{display:none}
+    .vero-bar-inner{flex-direction:column;align-items:stretch;gap:12px}
+    .vero-cta{width:100%;padding:15px}
+    .vero-bar-total{font-size:27px}
+  }
+  @media(max-width:380px){
+    .vero-sketch{height:36vh}
+    .vero-bar-total{font-size:24px}
+  }
+</style>
+</head>
+<body>
+<!-- shared hand-drawn "rough" filter for the sketches -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="rough" x="-4%" y="-4%" width="108%" height="108%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs></svg>
+
+<header class="vero-brand">
+  <div class="vero-brand-mark">VERO&nbsp;&nbsp;<span>—</span>&nbsp;&nbsp;Design Studio</div>
+  <div class="vero-eyebrow">Pantry Cost Estimator</div>
+  <div class="vero-brand-intro">Build your pantry and see an instant estimate.</div>
+  <div class="vero-brand-rule"></div>
+</header>
+
+<div class="vero-split">
+
+  <!-- ===================== STICKY SKETCH PANE ===================== -->
+  <aside class="vero-sketch">
+    <div class="sketch-card">
+      <div id="sketch"></div>
+    </div>
+  </aside>
+
+  <!-- ===================== SCROLLING CONTROLS ===================== -->
+  <main class="vero-ctrl">
+    <div class="vero-ctrl-inner">
+
+      <!-- BOTTOM CUPBOARD -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <div class="card__title">Bottom Cupboard</div>
+            <div class="card__sub">Base cabinets · 2 ft standard depth</div>
+          </div>
+          <div class="switch on" id="swBottom" role="switch" aria-checked="true" tabindex="0"><div class="knob"></div></div>
+        </div>
+        <div id="bodyBottom">
+          <div class="mt20">
+            <div class="row-b"><label class="fieldlbl">Cabinet length</label><span class="fieldval" id="lbBottomLen">8.0 ft</span></div>
+            <input type="range" id="inBottomLen" min="2" max="20" step="0.5" value="8">
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div>
+              <div class="sub-title">Countertop</div>
+              <div class="sub-note">Included · 2 ft depth</div>
+            </div>
+            <span class="mini-price" id="pxCt">LKR 0</span>
+          </div>
+          <div class="pills" id="ctPills">
+            <div class="pill active" data-v="Quartz">Quartz</div>
+            <div class="pill" data-v="Granite">Granite</div>
+          </div>
+          <div class="mt18">
+            <div class="row-b"><label class="fieldlbl">Countertop length</label><span class="fieldval" id="lbCtLen">8.0 ft</span></div>
+            <input type="range" id="inCtLen" min="2" max="20" step="0.5" value="8">
+            <div class="hint">Follows cabinet length — adjust independently if needed.</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div>
+              <div class="sub-title">Backsplash</div>
+              <div class="sub-note">Optional · 2 ft height</div>
+            </div>
+            <div class="switch" id="swBs" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
+          </div>
+          <div class="pills" id="bsPills" hidden>
+            <div class="pill active" data-v="Quartz">Quartz</div>
+            <div class="pill" data-v="Granite">Granite</div>
+            <div class="pill" data-v="Tempered Glass">Tempered Glass</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row-b"><span class="st-lbl">Section total</span><span class="st-val" id="stBottom">LKR 0</span></div>
+        </div>
+      </section>
+
+      <!-- TOP CUPBOARD -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <div class="card__title">Top Cupboard</div>
+            <div class="card__sub">Wall units · 2 ft standard depth</div>
+          </div>
+          <div class="switch on" id="swTop" role="switch" aria-checked="true" tabindex="0"><div class="knob"></div></div>
+        </div>
+        <div id="bodyTop">
+          <div class="mt20">
+            <div class="row-b"><label class="fieldlbl">Cabinet length</label><span class="fieldval" id="lbTopLen">8.0 ft</span></div>
+            <input type="range" id="inTopLen" min="2" max="20" step="0.5" value="8">
+          </div>
+          <div class="divider"></div>
+          <div class="row-b"><span class="st-lbl">Section total</span><span class="st-val" id="stTop">LKR 0</span></div>
+        </div>
+      </section>
+
+      <!-- TALL CUPBOARDS -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <div class="card__title">Tall Cupboards</div>
+            <div class="card__sub">7 ft units · priced per unit</div>
+          </div>
+        </div>
+        <div class="row" style="align-items:center;margin-top:20px">
+          <label class="fieldlbl">Quantity</label>
+          <div class="stepper">
+            <button id="tallMinus" aria-label="Fewer">−</button>
+            <span class="qty" id="tallQty">0</span>
+            <button id="tallPlus" aria-label="More">+</button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row-b"><span class="st-lbl">Section total</span><span class="st-val" id="stTall">LKR 0</span></div>
+      </section>
+
+      <!-- ISLAND -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <div class="card__title">Island</div>
+            <div class="card__sub">3 ft depth · countertop included</div>
+          </div>
+          <div class="switch" id="swIsland" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
+        </div>
+        <div id="bodyIsland" hidden>
+          <div class="mt20">
+            <div class="row-b"><label class="fieldlbl">Island length</label><span class="fieldval" id="lbIslandLen">5.0 ft</span></div>
+            <input type="range" id="inIslandLen" min="3" max="12" step="0.5" value="5">
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div>
+              <div class="sub-title">Countertop</div>
+              <div class="sub-note">Included · 3 ft depth</div>
+            </div>
+            <span class="mini-price" id="pxIslandCt">LKR 0</span>
+          </div>
+          <div class="pills" id="islandPills">
+            <div class="pill active" data-v="Quartz">Quartz</div>
+            <div class="pill" data-v="Granite">Granite</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row-b"><span class="st-lbl">Section total</span><span class="st-val" id="stIsland">LKR 0</span></div>
+        </div>
+      </section>
+
+      <p class="disclaimer">Estimate only — final pricing is confirmed after a design consultation.</p>
+      <div class="foot">VERO Design Studio · Colombo</div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ===================== FIXED TOTAL BAR ===================== -->
+<div class="vero-bar">
+  <div class="vero-bar-inner">
+    <div>
+      <div class="vero-bar-lbl">Estimated Total</div>
+      <div class="vero-bar-total" id="barTotal">LKR 0</div>
+    </div>
+    <a class="vero-cta" id="waLink" href="#" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#F6F2EB"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 01-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.24-8.11 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+      <span>Send my estimate on WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var MARGIN = 1.2;
+  var WA = "94767676832";
+  var ctRate = { Quartz: 5100, Granite: 4000 };
+  var bsRate = { Quartz: 5100, Granite: 4000, "Tempered Glass": 3500 };
+
+  var state = {
+    bottomOn: true,  bottomLength: 8,
+    countertopMaterial: "Quartz", countertopLength: 8,
+    backsplashOn: false, backsplashMaterial: "Quartz",
+    topOn: true, topLength: 8,
+    tallQty: 0,
+    islandOn: false, islandLength: 5, islandMaterial: "Quartz"
+  };
+
+  var $ = function(id){ return document.getElementById(id); };
+  function fmt(n){ return "LKR " + Math.round(n).toLocaleString("en-US"); }
+  function ft(v){ return v.toFixed(1) + " ft"; }
+
+  function calc(){
+    var s = state, M = MARGIN;
+    var bottomBase = s.bottomOn ? s.bottomLength * 2 * 30000 : 0;
+    var ctCost = s.bottomOn ? s.countertopLength * 2 * ctRate[s.countertopMaterial] : 0;
+    var bsCost = (s.bottomOn && s.backsplashOn) ? s.countertopLength * 2 * bsRate[s.backsplashMaterial] : 0;
+    var bottomModule = (bottomBase + ctCost + bsCost) * M;
+    var topModule = (s.topOn ? s.topLength * 2 * 25000 : 0) * M;
+    var tallModule = (s.tallQty * 125000) * M;
+    var islandBase = s.islandOn ? s.islandLength * 3 * 35000 : 0;
+    var islandCt = s.islandOn ? s.islandLength * 3 * ctRate[s.islandMaterial] : 0;
+    var islandModule = (islandBase + islandCt) * M;
+    var grand = bottomModule + topModule + tallModule + islandModule;
+    return { bottomModule:bottomModule, topModule:topModule, tallModule:tallModule, islandModule:islandModule,
+             grand:grand, ctCost:ctCost * M, islandCt:islandCt * M };
+  }
+
+  /* ================= rough 3D sketch (my style) ================= */
+  var SK = { stroke:"#4A4234", body:"#E5EBE4", side:"#D2DBD1", top:"#F4E8E2" };
+  function matFront(m){ return { Quartz:"#ECE7DC", Granite:"#7E7F77", "Tempered Glass":"rgba(122,170,164,0.55)" }[m] || "#ECE7DC"; }
+  function matTop(m){ return { Quartz:"#F3EEE6", Granite:"#96978E", "Tempered Glass":"rgba(158,200,194,0.6)" }[m] || "#F3EEE6"; }
+  function matSide(m){ return { Quartz:"#E0DACE", Granite:"#6B6C64", "Tempered Glass":"rgba(98,152,146,0.6)" }[m] || "#E0DACE"; }
+
+  function boxFn(dx, dy, sw, acc){
+    var K = SK.stroke;
+    var P = function(a){ return a.map(function(q){ return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" "); };
+    return function(bx, by, bw, bh, o){
+      [[bx,by],[bx+bw,by],[bx,by+bh],[bx+bw,by+bh],[bx+dx,by+dy],[bx+bw+dx,by+dy],[bx+bw+dx,by+bh+dy]].forEach(function(p){
+        if(p[0]<acc[0])acc[0]=p[0]; if(p[0]>acc[1])acc[1]=p[0];
+        if(p[1]<acc[2])acc[2]=p[1]; if(p[1]>acc[3])acc[3]=p[1];
+      });
+      var fr=[[bx,by],[bx+bw,by],[bx+bw,by+bh],[bx,by+bh]];
+      var tp=[[bx,by],[bx+bw,by],[bx+bw+dx,by+dy],[bx+dx,by+dy]];
+      var sd=[[bx+bw,by],[bx+bw+dx,by+dy],[bx+bw+dx,by+bh+dy],[bx+bw,by+bh]];
+      var g='<polygon points="'+P(sd)+'" fill="'+o.side+'" stroke="'+K+'" stroke-width="'+sw+'" stroke-linejoin="round"/>'
+          +'<polygon points="'+P(tp)+'" fill="'+o.top+'" stroke="'+K+'" stroke-width="'+sw+'" stroke-linejoin="round"/>'
+          +'<polygon points="'+P(fr)+'" fill="'+o.front+'" stroke="'+K+'" stroke-width="'+sw+'" stroke-linejoin="round"/>';
+      var n = o.panels || 0;
+      for(var i=1;i<n;i++){ var px=bx+bw*i/n; g+='<line x1="'+px.toFixed(1)+'" y1="'+by+'" x2="'+px.toFixed(1)+'" y2="'+(by+bh)+'" stroke="'+K+'" stroke-width="'+(sw*0.6).toFixed(2)+'"/>'; }
+      if(n>0 && !o.noHandles){ for(var j=0;j<n;j++){ var cx=bx+bw*(j+0.5)/n, hy=by+Math.min(bh*0.24,42), hw=Math.min((bw/n)*0.34,18);
+        g+='<line x1="'+(cx-hw/2).toFixed(1)+'" y1="'+hy.toFixed(1)+'" x2="'+(cx+hw/2).toFixed(1)+'" y2="'+hy.toFixed(1)+'" stroke="'+K+'" stroke-width="'+sw+'" stroke-linecap="round"/>'; } }
+      return g;
+    };
+  }
+  function wrap(svg, acc){
+    var pad = 26;
+    var w = (acc[1]-acc[0]) + 2*pad, h = (acc[3]-acc[2]) + 2*pad;
+    var vb = (acc[0]-pad).toFixed(1)+" "+(acc[2]-pad).toFixed(1)+" "+w.toFixed(1)+" "+h.toFixed(1);
+    return '<svg viewBox="'+vb+'" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;overflow:visible"><g filter="url(#rough)">'+svg+'</g></svg>';
+  }
+  // MY mechanic: the box WIDTH scales with the length slider (not a fixed box with more doors)
+  function wLen(len, lmin, lmax, wmin, wmax){ return wmin + (len - lmin) / (lmax - lmin) * (wmax - wmin); }
+  function pWidth(w){ return Math.max(1, Math.round(w / 64)); }   // door count follows the drawn width
+
+  function genPantry(){
+    var s = state, BF=SK.body, SF=SK.side, TF=SK.top;
+    var dx=86, dy=-56, sw=3.4, x=72;
+    var acc=[1e9,-1e9,1e9,-1e9], box=boxFn(dx,dy,sw,acc);
+    var botH=150, botY=356, topH=112, topY=58, ctTh=16, oh=12, bsH=54, svg="";
+    if(s.topOn){
+      var wt = wLen(s.topLength, 2, 20, 120, 470);
+      svg += box(x, topY, wt, topH, { front:BF, top:TF, side:SF, panels:pWidth(wt) });
+    }
+    if(s.bottomOn){
+      var wb = wLen(s.bottomLength, 2, 20, 120, 470);
+      var wc = wLen(s.countertopLength, 2, 20, 120, 470);
+      svg += box(x, botY, wb, botH, { front:BF, top:TF, side:SF, panels:pWidth(wb) });
+      if(s.backsplashOn){
+        // flat upright panel on the wall behind the counter — an all-vertical face, no top slab
+        var cbx = x - oh, cby = botY - ctTh, cbw = wc + 2*oh;
+        var bxL = cbx + dx, byB = cby + dy;                       // back-top edge of the countertop
+        var bsPts = [[bxL, byB], [bxL + cbw, byB], [bxL + cbw, byB - bsH], [bxL, byB - bsH]];
+        bsPts.forEach(function(p){ if(p[0]<acc[0])acc[0]=p[0]; if(p[0]>acc[1])acc[1]=p[0]; if(p[1]<acc[2])acc[2]=p[1]; if(p[1]>acc[3])acc[3]=p[1]; });
+        var bsP = bsPts.map(function(q){ return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" ");
+        svg += '<polygon points="' + bsP + '" fill="' + matFront(s.backsplashMaterial) + '" stroke="' + SK.stroke + '" stroke-width="' + sw + '" stroke-linejoin="round"/>';
+      }
+      svg += box(x-oh, botY-ctTh, wc+2*oh, ctTh, { front:matFront(s.countertopMaterial), top:matTop(s.countertopMaterial), side:matSide(s.countertopMaterial), panels:0 });
+    }
+    return wrap(svg, acc);
+  }
+  function genIsland(){
+    var s = state, BF=SK.body, SF=SK.side, TF=SK.top;
+    var dx=118, dy=-72, sw=3.4, x=72;
+    var acc=[1e9,-1e9,1e9,-1e9], box=boxFn(dx,dy,sw,acc);
+    var baseY=210, baseH=134, ctTh=16, oh=14;
+    var wi = wLen(s.islandLength, 3, 12, 150, 430);
+    var svg = box(x, baseY, wi, baseH, { front:BF, top:TF, side:SF, panels:pWidth(wi) });
+    svg += box(x-oh, baseY-ctTh, wi+2*oh, ctTh, { front:matFront(s.islandMaterial), top:matTop(s.islandMaterial), side:matSide(s.islandMaterial), panels:0 });
+    return wrap(svg, acc);
+  }
+  function genTall(){
+    var s = state, BF=SK.body, SF=SK.side, TF=SK.top;
+    var dx=44, dy=-30, sw=3.4;
+    var acc=[1e9,-1e9,1e9,-1e9], box=boxFn(dx,dy,sw,acc);
+    var draw=Math.min(s.tallQty,6), unitW=60, gap=22, h=300, x0=40, y0=70, svg="";
+    for(var i=0;i<draw;i++) svg += box(x0 + i*(unitW+gap), y0, unitW, h, { front:BF, top:TF, side:SF, panels:2 });
+    return wrap(svg, acc);
+  }
+  function block(title, sub, svg, flex){
+    return '<div class="sk-block" style="flex:'+flex+' 1 0">'
+      + '<div class="sk-block__head"><span class="sk-block__title">'+title+'</span><span class="sk-block__sub">'+sub+'</span></div>'
+      + '<div class="sk-block__art">'+svg+'</div></div>';
+  }
+  function buildSketch(){
+    var s = state, blocks = [];
+    if(s.bottomOn || s.topOn) blocks.push(block("Your Pantry", "Rough 3D sketch · not to scale", genPantry(), 1.8));
+    if(s.islandOn) blocks.push(block("Island", "3 ft standard width", genIsland(), 1.05));
+    if(s.tallQty > 0) blocks.push(block("Tall Cupboards", "× " + s.tallQty + " · 7 ft units", genTall(), 1.05));
+    if(!blocks.length) return '<div class="sk-empty">Enable a module to preview<br>your pantry sketch.</div>';
+    $("sketch").innerHTML = blocks.join('<div class="sk-div"></div>');
+  }
+
+  /* ================= total count-up ================= */
+  var lastTotal = 0;
+  function animateTotal(to){
+    var from = lastTotal; lastTotal = to;
+    $("barTotal").textContent = fmt(to);            // definitive value first
+    if(from === to || typeof requestAnimationFrame !== "function") return;
+    var t0 = null, dur = 520;
+    function tick(now){
+      if(t0 === null) t0 = now;
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      $("barTotal").textContent = fmt(from + (to - from) * e);
+      if(p < 1) requestAnimationFrame(tick); else $("barTotal").textContent = fmt(to);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function setPillActive(container, val){
+    [].forEach.call($(container).children, function(b){ b.classList.toggle("active", b.getAttribute("data-v") === val); });
+  }
+
+  function render(){
+    var s = state, c = calc();
+    // labels
+    $("lbBottomLen").textContent = ft(s.bottomLength);
+    $("lbCtLen").textContent = ft(s.countertopLength);
+    $("lbTopLen").textContent = ft(s.topLength);
+    $("lbIslandLen").textContent = ft(s.islandLength);
+    $("tallQty").textContent = s.tallQty;
+    // section totals + mini prices
+    $("stBottom").textContent = fmt(c.bottomModule);
+    $("pxCt").textContent = fmt(c.ctCost);
+    $("stTop").textContent = fmt(c.topModule);
+    $("stTall").textContent = fmt(c.tallModule);
+    $("stIsland").textContent = fmt(c.islandModule);
+    $("pxIslandCt").textContent = fmt(c.islandCt);
+    // toggles
+    $("swBottom").classList.toggle("on", s.bottomOn); $("bodyBottom").hidden = !s.bottomOn;
+    $("swTop").classList.toggle("on", s.topOn); $("bodyTop").hidden = !s.topOn;
+    $("swIsland").classList.toggle("on", s.islandOn); $("bodyIsland").hidden = !s.islandOn;
+    $("swBs").classList.toggle("on", s.backsplashOn); $("bsPills").hidden = !s.backsplashOn;
+    // aria
+    $("swBottom").setAttribute("aria-checked", s.bottomOn); $("swTop").setAttribute("aria-checked", s.topOn);
+    $("swIsland").setAttribute("aria-checked", s.islandOn); $("swBs").setAttribute("aria-checked", s.backsplashOn);
+    // pills
+    setPillActive("ctPills", s.countertopMaterial);
+    setPillActive("bsPills", s.backsplashMaterial);
+    setPillActive("islandPills", s.islandMaterial);
+    // stepper limits
+    $("tallMinus").disabled = s.tallQty === 0;
+    $("tallPlus").disabled = s.tallQty === 12;
+    // sketch + total + wa
+    buildSketch();
+    animateTotal(c.grand);
+    $("waLink").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(c));
+  }
+
+  function waMessage(c){
+    var s = state, L = [];
+    L.push("Hello VERO Design Studio — here is my pantry estimate:"); L.push("");
+    if(s.bottomOn){
+      L.push("• Bottom cupboard — " + ft(s.bottomLength));
+      L.push("   Countertop: " + s.countertopMaterial + " (" + ft(s.countertopLength) + ")");
+      if(s.backsplashOn) L.push("   Backsplash: " + s.backsplashMaterial);
+      L.push("   " + fmt(c.bottomModule));
+    }
+    if(s.topOn) L.push("• Top cupboard — " + ft(s.topLength) + "   " + fmt(c.topModule));
+    if(s.tallQty > 0) L.push("• Tall cupboards — x" + s.tallQty + "   " + fmt(c.tallModule));
+    if(s.islandOn) L.push("• Island — " + ft(s.islandLength) + " (" + s.islandMaterial + " top)   " + fmt(c.islandModule));
+    L.push(""); L.push("Estimated total: " + fmt(c.grand));
+    return L.join("\n");
+  }
+
+  /* ================= wiring ================= */
+  function toggle(id, prop){
+    var el = $(id);
+    function flip(){ state[prop] = !state[prop]; render(); }
+    el.addEventListener("click", flip);
+    el.addEventListener("keydown", function(e){ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); flip(); } });
+  }
+  toggle("swBottom","bottomOn"); toggle("swTop","topOn"); toggle("swIsland","islandOn"); toggle("swBs","backsplashOn");
+
+  $("inBottomLen").addEventListener("input", function(){
+    var v = parseFloat(this.value);
+    state.bottomLength = v; state.countertopLength = v;     // countertop follows the cabinet
+    $("inCtLen").value = v;
+    render();
+  });
+  $("inCtLen").addEventListener("input", function(){ state.countertopLength = parseFloat(this.value); render(); });
+  $("inTopLen").addEventListener("input", function(){ state.topLength = parseFloat(this.value); render(); });
+  $("inIslandLen").addEventListener("input", function(){ state.islandLength = parseFloat(this.value); render(); });
+
+  function wirePills(id, prop){
+    $(id).addEventListener("click", function(e){
+      var b = e.target.closest(".pill"); if(!b) return;
+      state[prop] = b.getAttribute("data-v"); render();
+    });
+  }
+  wirePills("ctPills","countertopMaterial");
+  wirePills("bsPills","backsplashMaterial");
+  wirePills("islandPills","islandMaterial");
+
+  $("tallMinus").addEventListener("click", function(){ state.tallQty = Math.max(0, state.tallQty - 1); render(); });
+  $("tallPlus").addEventListener("click", function(){ state.tallQty = Math.min(12, state.tallQty + 1); render(); });
+
+  render();
+})();
+</script>
+</body>
+</html>
