@@ -338,8 +338,8 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
 
   var MARGIN = 1.2;
   var WA = "94767676832";
-  var ctRate = { Quartz: 5100, Granite: 4000 };
-  var bsRate = { Quartz: 5100, Granite: 4000, "Tempered Glass": 3500 };
+  var ctRate = { Quartz: 5500, Granite: 4000 };                       // per SQUARE foot
+  var bsRate = { Quartz: 5500, Granite: 4000, "Tempered Glass": 3500 }; // per SQUARE foot
 
   var state = {
     bottomOn: true,  bottomLength: 8,
@@ -356,15 +356,15 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
 
   function calc(){
     var s = state, M = MARGIN;
-    // all rates are per LINEAR foot — cost = length x rate (no depth/height multiplier)
+    // cabinets/island/tall are per LINEAR foot; countertops & backsplash are per SQUARE foot (length x standard depth/height)
     var bottomBase = s.bottomOn ? s.bottomLength * 30000 : 0;
-    var ctCost = s.bottomOn ? s.countertopLength * ctRate[s.countertopMaterial] : 0;
-    var bsCost = (s.bottomOn && s.backsplashOn) ? s.countertopLength * bsRate[s.backsplashMaterial] : 0;
+    var ctCost = s.bottomOn ? s.countertopLength * 2 * ctRate[s.countertopMaterial] : 0;                      // 2 ft counter depth
+    var bsCost = (s.bottomOn && s.backsplashOn) ? s.countertopLength * 2 * bsRate[s.backsplashMaterial] : 0;  // 2 ft backsplash height
     var bottomModule = (bottomBase + ctCost + bsCost) * M;
     var topModule = (s.topOn ? s.topLength * 25000 : 0) * M;
     var tallModule = (s.tallQty * 125000) * M;
     var islandBase = s.islandOn ? s.islandLength * 35000 : 0;
-    var islandCt = s.islandOn ? s.islandLength * ctRate[s.islandMaterial] : 0;
+    var islandCt = s.islandOn ? s.islandLength * 3 * ctRate[s.islandMaterial] : 0;                            // 3 ft island width
     var islandModule = (islandBase + islandCt) * M;
     var grand = bottomModule + topModule + tallModule + islandModule;
     return { bottomModule:bottomModule, topModule:topModule, tallModule:tallModule, islandModule:islandModule,
