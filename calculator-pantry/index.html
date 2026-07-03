@@ -134,13 +134,9 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
 
   /* ---------- fixed total bar ---------- */
   .vero-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#FFFDF9;border-top:1px solid rgba(29,29,29,.1);box-shadow:0 -8px 28px rgba(29,29,29,.09);padding:13px 20px calc(13px + env(safe-area-inset-bottom))}
-  .vero-bar-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .vero-bar-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:center;align-items:center;text-align:center;gap:18px}
   .vero-bar-lbl{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
   .vero-bar-total{font-size:29px;font-weight:700;color:var(--teal);margin-top:3px;font-variant-numeric:tabular-nums;letter-spacing:-.5px;line-height:1.05}
-  .vero-cta{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--teal);color:#F6F2EB;text-decoration:none;font-weight:600;font-size:15px;padding:15px 22px;border-radius:13px;box-shadow:0 6px 18px rgba(43,106,96,.28);flex:none;transition:transform .1s,background .15s}
-  .vero-cta:active{transform:scale(.985)}
-  .vero-cta:hover{background:var(--teal-deep)}
-  .vero-cta svg{flex:none}
 
   [hidden]{display:none!important}
 
@@ -149,12 +145,10 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
     .vero-sketch{width:100%;height:40vh;padding:12px 14px;border-right:none;border-bottom:1px solid var(--line);background:var(--bg);z-index:20;
       box-shadow:0 6px 18px rgba(29,29,29,.06)}
     .vero-ctrl{width:100%}
-    .vero-ctrl-inner{padding:20px 16px 188px}
+    .vero-ctrl-inner{padding:20px 16px 128px}
     .vero-brand{padding:26px 20px 16px}
     .vero-brand-mark{font-size:23px}
     .vero-brand-intro{display:none}
-    .vero-bar-inner{flex-direction:column;align-items:stretch;gap:12px}
-    .vero-cta{width:100%;padding:15px}
     .vero-bar-total{font-size:27px}
   }
   @media(max-width:380px){
@@ -325,10 +319,6 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
       <div class="vero-bar-lbl">Estimated Total</div>
       <div class="vero-bar-total" id="barTotal">LKR 0</div>
     </div>
-    <a class="vero-cta" id="waLink" href="#" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#F6F2EB"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 01-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.24-8.11 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-      <span>Send my estimate on WhatsApp</span>
-    </a>
   </div>
 </div>
 
@@ -337,7 +327,6 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
   "use strict";
 
   var MARGIN = 1.2;
-  var WA = "94767676832";
   var ctRate = { Quartz: 5500, Granite: 4000 };                       // per SQUARE foot
   var bsRate = { Quartz: 5500, Granite: 4000, "Tempered Glass": 3500 }; // per SQUARE foot
 
@@ -516,26 +505,9 @@ src="https://www.facebook.com/tr?id=1733209287865139&ev=PageView&noscript=1"
     // stepper limits
     $("tallMinus").disabled = s.tallQty === 0;
     $("tallPlus").disabled = s.tallQty === 12;
-    // sketch + total + wa
+    // sketch + total
     buildSketch();
     animateTotal(c.grand);
-    $("waLink").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(c));
-  }
-
-  function waMessage(c){
-    var s = state, L = [];
-    L.push("Hello VERO Design Studio — here is my pantry estimate:"); L.push("");
-    if(s.bottomOn){
-      L.push("• Bottom cupboard — " + ft(s.bottomLength));
-      L.push("   Countertop: " + s.countertopMaterial + " (" + ft(s.countertopLength) + ")");
-      if(s.backsplashOn) L.push("   Backsplash: " + s.backsplashMaterial);
-      L.push("   " + fmt(c.bottomModule));
-    }
-    if(s.topOn) L.push("• Top cupboard — " + ft(s.topLength) + "   " + fmt(c.topModule));
-    if(s.tallQty > 0) L.push("• Tall cupboards — x" + s.tallQty + "   " + fmt(c.tallModule));
-    if(s.islandOn) L.push("• Island — " + ft(s.islandLength) + " (" + s.islandMaterial + " top)   " + fmt(c.islandModule));
-    L.push(""); L.push("Estimated total: " + fmt(c.grand));
-    return L.join("\n");
   }
 
   /* ================= wiring ================= */
